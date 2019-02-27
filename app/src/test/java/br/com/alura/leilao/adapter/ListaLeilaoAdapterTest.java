@@ -12,6 +12,7 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class ListaLeilaoAdapterTest {
 
@@ -25,6 +26,7 @@ public class ListaLeilaoAdapterTest {
         adapter.atualiza(asList(new Leilao("CRF 230"), new Leilao("CRF 230"), new Leilao("CRF 230")));
 
         assertThat(adapter.getItemCount(), is(3));
+        verify(adapter).atualizaLista();
     }
 
 }
